@@ -1,3 +1,8 @@
+using FitnessWG.Data;
+using FitnessWG.Interfaces;
+using FitnessWG.Repositories;
+using Microsoft.EntityFrameworkCore;
+
 namespace FitnessWG
 {
     public class Program
@@ -8,6 +13,13 @@ namespace FitnessWG
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            // Add DbContext
+            builder.Services.AddDbContext<SQLiteDBContext>(options =>
+            options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+            // Add Scoped - DI
+            builder.Services.AddScoped<IDBInitializer, DBInitializer>();
 
             var app = builder.Build();
 
