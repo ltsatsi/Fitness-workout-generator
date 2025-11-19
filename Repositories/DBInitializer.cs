@@ -41,7 +41,21 @@ namespace FitnessWG.Repositories
                                 ExerciseDescription = "Train biceps", 
                                 Equipment = null, 
                                 WorkoutId = 1 
-                            }
+                            },new Exercise()
+                            {
+                                ExerciseId = 2,
+                                ExerciseName = "Forearms",
+                                ExerciseDescription = "Train biceps",
+                                Equipment = null,
+                                WorkoutId = 1
+                            },new Exercise()
+                            {
+                                ExerciseId = 3,
+                                ExerciseName = "Shoulder press",
+                                ExerciseDescription = "Train biceps",
+                                Equipment = null,
+                                WorkoutId = 1
+                            },
                         }
                     } 
                 },

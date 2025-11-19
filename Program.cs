@@ -20,6 +20,7 @@ namespace FitnessWG
 
             // Add Scoped - DI
             builder.Services.AddScoped<IDBInitializer, DBInitializer>();
+            builder.Services.AddScoped<IUserRepo, UserRepo>();
 
             var app = builder.Build();
 

@@ -34,6 +34,6 @@ namespace FitnessWG.Models
         public bool HasEquipment { get; set; }
 
 
-        public Workout Workout { get; set; }
+        public Workout? Workout { get; set; }
     }
 }

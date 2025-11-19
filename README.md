@@ -23,8 +23,10 @@ user-defined constraints such as workout duration and difficulty.
 - Balanced muscle-group rotation
 - Progressive overload logic
 - Automatic rest-day spacing
-- CRUD for exercises and workout plans
+- Dependency Injection
+- Repository Pattern
 - Clean EF Core relationships and navigation properties
+- Implements asynchronous database queries using EF Core to perform non-blocking data retrieval, improving scalability and throughput of the application.
 
 ---
 
