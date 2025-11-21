@@ -1,0 +1,86 @@
+﻿@model FitnessWG.Models.User
+
+@{
+    ViewData["Title"] = "UserDetails";
+}
+
+<div class="container">
+    <!-- Header Section -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <h4 class="mb-2">Dashboard</h4>
+            <p class="mb-0">Welcome back, @Model.UserName. Let's keep in shape.</p>
+        </div>
+    </div>
+
+    <!-- Workout Generation Section -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="bg-theme rounded text-center d-flex justify-content-center align-items-center flex-column" style="min-height: 280px;">
+                <h4 class="mb-3">Your Next Workout Awaits</h4>
+                <p class="mb-4">Click the button to generate a new workout tailored to your goals.</p>
+
+                <!-- workout generator -->
+                <a class="btn btn-danger btn-lg px-4 mb-3">Generate</a>
+                <p class="text-muted small mb-0">Experience Level: @Model.ExperienceLevel</p>
+            </div>
+        </div>
+    </div>
+
+    @if(Model.Workout != null)
+    {
+        <!-- Recent Activity Section -->
+        <div class="row">
+            <div class="col-12">
+                <h4 class="mb-3">Recent Activity</h4>
+
+                <!-- Last Workout Card -->
+                <div class="bg-theme rounded p-4 mb-3">
+                    <div class="row align-items-center">
+                        <div class="col-md-8">
+                            <p class="text-muted mb-1">Last Workout: Wednesday, Oct 26</p>
+                            <h5 class="mb-0">Full Body Strength</h5>
+                        </div>
+                        <div class="col-md-4 text-md-end mt-2 mt-md-0">
+                            <a class="btn btn-outline-light">View History</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <!-- Quick actions Section -->
+        <div class="row">
+            <div class="col-12">
+                <h4 class="mb-3">Quick Actions</h4>
+            </div>
+            <!--  Workout Card -->
+            <div class="col-6 pt-1 mb-1">
+                <div class="bg-theme rounded p-2 d-flex justify-content-between align-items-center">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <img class="img-fluid rounded me-3" src="~/images/man_gyming.png" width="150" alt="Alternate Text" />
+                        <div>
+                            <h5>Shoulder press</h5>
+                            <p class="text-muted small mb-0">3 Sets x 8-10 Reps</p>
+                        </div>
+                    </div>
+                    <a href="#"><i class="bi bi-chevron-down me-3"></i></a>
+                </div>
+            </div>
+            <div class="col-6 pt-1 mb-1">
+                <div class="bg-theme rounded p-2 d-flex justify-content-between align-items-center">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <img class="img-fluid rounded me-3" src="~/images/women_gyming.png" width="150" alt="Alternate Text" />
+                        <div>
+                            <h5>Ropes</h5>
+                            <p class="text-muted small mb-0">Duration: 2.3 min</p>
+                        </div>
+                    </div>
+                    <a href="#"><i class="bi bi-chevron-down me-3"></i></a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

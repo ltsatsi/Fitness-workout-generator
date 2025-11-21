@@ -21,6 +21,14 @@ namespace FitnessWG.Controllers
 
         public IActionResult SeedDatabase()
         {
+            // Create a Database folder dynamically
+            string dbDirectory = Path.Combine(Directory.GetCurrentDirectory(), "Database");
+
+            if (!Directory.Exists(dbDirectory))
+            {
+                Directory.CreateDirectory(dbDirectory);
+            }
+
             _seedDb.Initialize(_context);
             ViewBag.SeedFeedBack = "Database successfully created. Check Database folder.";
             return View();
@@ -28,11 +36,13 @@ namespace FitnessWG.Controllers
 
         public IActionResult Index()
         {
+            ViewData["ActivePage"] = "Home";
             return View();
         }
 
         public IActionResult Privacy()
         {
+            ViewData["ActivePage"] = "Privacy";
             return View();
         }
 
